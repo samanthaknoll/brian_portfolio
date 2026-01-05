@@ -1,0 +1,730 @@
+/* ========== Root Theme Variables ========== */
+
+
+
+:root {
+  /* Fonts */
+  --font-primary: 'DM Sans', sans-serif;
+  --font-secondary: 'Roboto Mono', monospace;
+
+  /* Colors */
+  --color-nittany-navy: #001E44;
+  --color-beaver-blue: #1e407c;
+  --color-white-out: #ffffff;
+  --color-pugh-blue: #96BEE6;
+  --color-soft-gray: #f5f7fa;
+  --color-dark-slate: #2f3e46;
+}
+
+.section-spacing {
+  padding: 5rem 1.5rem 5rem 1.5rem;
+}
+
+/* Default for desktop */
+.section-anchor {
+  scroll-margin-top: 80px;
+}
+
+/* Mobile: add more offset */
+@media (max-width: 768px) {
+  .section-anchor {
+    scroll-margin-top: 240px;
+  }
+}
+
+
+/* ========== Custom Navbar Styles ========== */
+.custom-navbar {
+  background-color: var(--color-nittany-navy);
+  font-family: var(--font-primary);
+  min-height: 55px;
+  padding-right: 20px;
+  padding-left: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link,
+.custom-navbar .dropdown-toggle {
+  color: var(--color-white-out);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  font-size: 17px;
+}
+
+.custom-navbar .navbar-brand {
+letter-spacing: 2px; 
+margin-top: 5px;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .dropdown-toggle:hover,
+.navbar-nav .nav-link.active {
+  color: var(--color-pugh-blue);
+}
+
+.custom-navbar .btn-outline-light {
+  border: 2px solid var(--color-white-out);
+  font-weight: 600;
+  font-family: var(--font-secondary);
+}
+
+.custom-navbar .btn-outline-light:hover {
+  background-color: var(--color-white-out);
+  color: var(--color-nittany-navy);
+}
+
+/* Mobile Toggler Styles */
+.custom-toggler {
+  border-color: var(--color-white-out);
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+/* ===== Hero Section Styling for Spencer Knoll ===== */
+
+.hero {
+  display: flex;
+  flex-direction: row;
+  min-height: 65vh;
+  overflow: hidden;
+  font-family: var(--font-heading);
+}
+
+.hero-image {
+  flex: 1;
+  background-image: linear-gradient(rgba(0, 30, 68, 0.3), rgba(0, 30, 68, 0.3)),
+    url('images/brian-heid-pilot.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 300px;
+}
+
+.hero-content {
+  flex: 1;
+  background-color: var(--color-beaver-blue);
+  color: var(--color-white-out);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.tagline {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+.highlight {
+  color: var(--color-pugh-blue);
+  font-weight: bold;
+}
+
+.cta-button {
+  background-color: var(--color-white-out);
+  color: var(--color-nittany-navy);
+  font-weight: 600;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--color-soft-gray);
+}
+
+.local-note {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-white-out);
+  margin-top: 1.5rem;
+  opacity: 0.85;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .hero-image {
+    min-height: 200px;
+    height: 40vh;
+  }
+
+  .hero-content {
+    padding: 2rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .tagline {
+    font-size: 1.75rem;
+  }
+}
+
+.projects-section {
+  font-family: var(--font-body);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-family: var(--font-heading);
+  color: var(--color-nittany-navy);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-dark-slate);
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.project-card {
+  background-color: var(--color-white-out);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.project-content h3 {
+  font-size: 1.25rem;
+  color: var(--color-nittany-navy);
+  font-family: var(--font-heading);
+}
+
+.project-problem,
+.project-story {
+  font-size: 0.95rem;
+  color: var(--color-dark-slate);
+  line-height: 1.5;
+}
+
+.explore-btn {
+  margin-top: auto;
+  background-color: var(--color-nittany-navy);
+  color: var(--color-white-out);
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-family: var(--font-body);
+  width: fit-content;
+}
+
+.explore-btn:hover {
+  background-color: var(--color-beaver-blue);
+}
+
+.about-section {
+  color: var(--color-dark-slate);
+  font-family: var(--font-body);
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-nittany-navy);
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+.about-intro {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--color-beaver-blue);
+}
+
+.about-note {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--color-dark-slate);
+  margin-top: 1.5rem;
+}
+
+.about-photo {
+  flex: 1;
+  min-width: 280px;
+  text-align: center;
+}
+
+.about-photo img {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+  }
+
+  .project-card {
+  max-width: unset;
+}
+}
+
+.skills-section {
+  background-color: white;
+  font-family: var(--font-body);
+  background: var(--color-soft-gray);
+}
+
+.skills-title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--color-nittany-navy);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.skills-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-dark-slate);
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.skill-group {
+  background-color: var(--color-white-out);
+  border-radius: 12px;
+  padding: 2rem;
+  width: 280px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  border-top: 12px solid var(--color-nittany-navy);
+}
+
+.skill-group h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--color-nittany-navy);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.skill-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-group ul li {
+  font-size: 0.95rem;
+  color: var(--color-dark-slate);
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--color-soft-gray);
+}
+
+.skill-group ul li:last-child {
+  border-bottom: none;
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .skills-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skill-group {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+.contact-section {
+  background: linear-gradient(
+    180deg,
+    rgba(30, 64, 124, 0.95) 0%,   /* Strong Beaver Blue */
+    rgba(0, 30, 68, 0.95) 100%    /* Deep Nittany Navy */
+  );
+  color: var(--color-white-out);
+  font-family: var(--font-body);
+  text-align: center;
+  padding-top: 4rem;
+}
+
+.contact-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-section h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-pugh-blue);
+}
+
+.contact-intro {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-methods p {
+  margin: 0.5rem 0;
+}
+
+.contact-methods a {
+  color: var(--color-pugh-blue);
+  text-decoration: underline;
+}
+
+.contact-methods a:hover {
+  text-decoration: none;
+}
+
+.contact-form {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  width: 100%;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  background-color: var(--color-pugh-blue);
+  color: var(--color-nittany-navy);
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: var(--color-white-out);
+  color: var(--color-nittany-navy);
+}
+
+.site-footer {
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+}
+
+.site-footer a {
+  color: black;
+  text-decoration: none;
+  margin: 0 0.25rem;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.floating-chat-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--color-nittany-navy);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 1000;
+}
+
+.floating-chat-btn:hover {
+  background-color: var(--color-beaver-blue);
+  color: var(--color-white-out);
+  transform: translateY(-2px);
+}
+
+
+.testimonials-section {
+  background-color: white; /* Light background */
+  color: var(--color-nittany-navy); /* Dark text */
+  text-align: center;
+  font-family: var(--font-body);
+}
+
+.testimonials-heading {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-nittany-navy);
+}
+
+.testimonials-intro {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  color: var(--color-dark-slate);
+}
+
+.testimonials-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.testimonial {
+  background-color: var(--color-white-out);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  border-left: 10px solid var(--color-pugh-blue);
+  text-align: left;
+}
+
+.testimonial-text {
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--color-dark-slate);
+  margin-bottom: 1rem;
+}
+
+.testimonial-name {
+  font-weight: 600;
+  color: var(--color-beaver-blue);
+  font-family: var(--font-heading);
+}
+
+@media (min-width: 768px) {
+  .testimonials-grid {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .testimonial {
+    flex: 1;
+    max-width: 500px;
+  }
+}
+
+/* === Dark Approach Section === */
+ /* === Light Approach Section === */
+.approach-section-light {
+  background-color: var(--color-soft-gray); /* Light background */
+  padding: 4rem 1rem;
+  font-family: var(--font-body);
+}
+
+.approach-section-light .section-title {
+  color: var(--color-nittany-navy);
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+}
+
+.approach-section-light .step-title {
+  font-family: var(--font-heading);
+  color: var(--color-beaver-blue);
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.approach-section-light .step-text {
+  color: var(--color-dark-slate);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.approach-section-light .approach-img {
+  max-height: 240px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+ 
+
+  .approach-img {
+    max-height: 240px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  }
+
+.site-footer {
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem;
+}
+
+.footer-icons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-nittany-navy);
+  color: var(--color-white-out);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.icon-btn:hover {
+  background-color: var(--color-beaver-blue);
+}
+
+/* === BDS Highlight Section === */
+.bds-highlight-section {
+  color: var(--color-nittany-navy);
+  font-family: var(--font-primary);
+  background: var(--color-soft-gray);
+  text-align: center;
+}
+
+.bds-highlight-section h2 {
+  font-size: 2.5rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-nittany-navy);
+  margin-bottom: 1.5rem;
+}
+
+.bds-highlight-section p {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--color-dark-slate);
+}
+
+.bds-highlight-section .btn-primary {
+  background-color: var(--color-beaver-blue);
+  border: none;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.bds-highlight-section .btn-primary:hover {
+  background-color: var(--color-nittany-navy);
+}
